@@ -1,0 +1,263 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 80px 170px;
+    /* Fade in animation untuk container utama */
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.about-title{
+    position: relative;
+    /* Fade in dengan delay */
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out forwards;
+    animation-delay: 0.2s;
+}
+
+.about-sections{
+    display: flex;
+    flex-direction: column; /* Ubah ke column agar about-down berada di bawah */
+    gap: 80px;
+    align-items: center; /* Center semua content */
+    /* Fade in dengan delay */
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 0.4s;
+}
+
+/* Container untuk about-left dan about-right */
+.about-top {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    /* Fade in dari bawah */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.2s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+.about-left img{
+    width: 400px;
+    /* Fade in dari kiri */
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeInLeft 1s ease-in-out forwards;
+    animation-delay: 0.8s;
+}
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Fade in dari kanan */
+    opacity: 0;
+    transform: translateX(30px);
+    animation: fadeInRight 1s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.about-para{
+    font-size: 38px;
+}
+
+.about-para p{
+    margin-bottom: 5rem;
+    /* Fade in untuk setiap paragraf */
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 1.2s;
+}
+
+.about-down{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 80px;
+    /* Fade in dari bawah */
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1.3s ease-in-out forwards;
+    animation-delay: 1.4s;
+}
+
+/* Container untuk about-editing dan about-programming */
+.about-expertice {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-editing {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateX(-219px); /* Geser ke kiri 219px */
+    /* Fade in dengan mempertahankan posisi */
+    opacity: 0;
+    animation: fadeInEditingSection 1s ease-in-out forwards;
+    animation-delay: 1.6s;
+}
+
+.about-programming{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateX(58px); /* Geser ke kanan 58px */
+    /* Fade in dengan mempertahankan posisi */
+    opacity: 0;
+    animation: fadeInProgrammingSection 1s ease-in-out forwards;
+    animation-delay: 1.8s;
+}
+
+.about-editing-logo, .about-programming-logo {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-editing-logo img, .about-programming-logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    /* Fade in untuk setiap logo dengan stagger effect */
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+/* Stagger animation untuk logo */
+.about-editing-logo img:nth-child(1), .about-programming-logo img:nth-child(1) {
+    animation-delay: 2s;
+}
+.about-editing-logo img:nth-child(2), .about-programming-logo img:nth-child(2) {
+    animation-delay: 2.1s;
+}
+.about-editing-logo img:nth-child(3), .about-programming-logo img:nth-child(3) {
+    animation-delay: 2.2s;
+}
+.about-editing-logo img:nth-child(4), .about-programming-logo img:nth-child(4) {
+    animation-delay: 2.3s;
+}
+.about-editing-logo img:nth-child(5), .about-programming-logo img:nth-child(5) {
+    animation-delay: 2.4s;
+}
+.about-editing-logo img:nth-child(6), .about-programming-logo img:nth-child(6) {
+    animation-delay: 2.5s;
+}
+
+.about-editing-title span.indent, 
+.about-other-title span.indent {
+  padding-left: 2em; /* Sesuaikan ukuran tab */
+  display: inline-block; /* Penting untuk span */
+}
+
+.about-programming-title span.indent {
+  padding-left: 2.1em; /* Sesuaikan ukuran tab */
+  display: inline-block; /* Penting untuk span */
+}
+
+.about-other {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: flex-start;
+    gap: 20px;
+    /* Fade in dari bawah */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: 2.6s;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInEditingSection {
+    from {
+        opacity: 0;
+        transform: translateX(-219px) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-219px) translateY(0);
+    }
+}
+
+@keyframes fadeInProgrammingSection {
+    from {
+        opacity: 0;
+        transform: translateX(58px) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(58px) translateY(0);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Hover effects untuk interaktivitas tambahan */
+.about-editing-logo img:hover, 
+.about-programming-logo img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.about-left img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
