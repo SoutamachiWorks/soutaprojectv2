@@ -1,0 +1,298 @@
+/* Keyframes untuk animasi */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.works {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 120px 170px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Poster Design Section - Top */
+.works-poster {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: flex-start;
+    gap: 30px;
+    opacity: 0;
+    animation: fadeInLeft 0.8s ease-out 0.2s forwards;
+}
+
+.works-poster h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInLeft 0.6s ease-out 0.4s forwards;
+}
+
+.works-poster h1::before {
+    content: "• ";
+    margin-right: 8px;
+}
+
+.works-poster-img {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    height: fit-content;
+    transform: translateX(30px);
+}
+
+.works-poster-img img {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideInFromBottom 0.6s ease-out forwards;
+}
+
+/* Staggered animation untuk setiap gambar poster */
+.works-poster-img img:nth-child(1) {
+    animation-delay: 0.6s;
+}
+
+.works-poster-img img:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.works-poster-img img:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.works-poster-img img:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.works-poster-img img:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    position: relative;
+}
+
+/* Web Design Section - Bottom */
+.works-web-design {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: flex-start;
+    gap: 30px;
+    opacity: 0;
+    animation: fadeInLeft 0.8s ease-out 1.0s forwards;
+}
+
+.works-web-design h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInLeft 0.6s ease-out 1.2s forwards;
+}
+
+.works-web-design h1::before {
+    content: "• ";
+    margin-right: 8px;
+}
+
+.works-web-design-img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transform: translateX(30px);
+}
+
+.works-web-design-img img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideInFromBottom 0.6s ease-out 1.4s forwards;
+}
+
+.works-web-design-img img:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    position: relative;
+}
+
+/* Scroll-triggered animations */
+.works.scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.works.scroll-animation.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.works-poster.scroll-animation {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+}
+
+.works-poster.scroll-animation.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.works-web-design.scroll-animation {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s;
+}
+
+.works-web-design.scroll-animation.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .works {
+        margin: 60px 80px;
+    }
+    
+    .works-poster-img {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        transform: translateX(20px);
+    }
+    
+    .works-poster-img img {
+        max-height: 400px;
+    }
+    
+    .works-web-design-img {
+        transform: translateX(20px);
+    }
+    
+    .works-web-design-img img {
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .works {
+        gap: 40px;
+        margin: 40px 15px;
+    }
+    
+    .works-poster h1,
+    .works-web-design h1 {
+        font-size: 2rem;
+    }
+    
+    .works-poster-img {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        transform: translateX(10px);
+    }
+    
+    .works-poster-img img {
+        max-height: 300px;
+    }
+    
+    .works-web-design-img {
+        transform: translateX(10px);
+    }
+    
+    .works-web-design-img img {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .works {
+        margin: 30px 10px;
+        gap: 30px;
+    }
+    
+    .works-poster h1,
+    .works-web-design h1 {
+        font-size: 1.8rem;
+    }
+    
+    .works-poster-img {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        transform: translateX(5px);
+    }
+    
+    .works-poster-img img {
+        max-height: 250px;
+    }
+    
+    .works-web-design-img {
+        transform: translateX(5px);
+    }
+    
+    .works-web-design-img img {
+        max-height: 300px;
+    }
+    
+    /* Reduce animation delays on mobile */
+    .works-poster-img img:nth-child(1) { animation-delay: 0.3s; }
+    .works-poster-img img:nth-child(2) { animation-delay: 0.4s; }
+    .works-poster-img img:nth-child(3) { animation-delay: 0.5s; }
+    .works-poster-img img:nth-child(4) { animation-delay: 0.6s; }
+    
+    .works-web-design { animation-delay: 0.7s; }
+    .works-web-design h1 { animation-delay: 0.8s; }
+    .works-web-design-img img { animation-delay: 0.9s; }
+}
