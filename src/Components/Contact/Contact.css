@@ -1,0 +1,230 @@
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 80px 170px;
+    /* Fade in dari atas untuk container utama */
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInFromTop 1s ease-in-out forwards;
+}
+
+.contact-logo{
+    display: flex;
+    margin-right: 87%;
+    /* Fade in dari atas dengan delay */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInFromTop 1.2s ease-in-out forwards;
+    animation-delay: 0.2s;
+}
+
+.contact-section{
+    display: flex;
+    flex-direction: column; /* Ubah ke column agar about-down berada di bawah */
+    gap: 80px;
+    align-items: center; /* Center semua content */
+    /* Fade in dari atas dengan delay */
+    opacity: 0;
+    transform: translateY(-40px);
+    animation: fadeInFromTop 1.3s ease-in-out forwards;
+    animation-delay: 0.4s;
+}
+
+.contact-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Fade in dari atas dengan delay */
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInFromTop 1.2s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+.contact-findme{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-self: flex-start;
+    transform: translateX(-438px);
+    /* Fade in dari atas dengan mempertahankan posisi X */
+    opacity: 0;
+    animation: fadeInFindme 1s ease-in-out forwards;
+    animation-delay: 0.8s;
+}
+
+.contact-findme-links{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+    /* Fade in dari atas untuk links */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInFromTop 1s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+/* Stagger animation untuk setiap link */
+.contact-findme-links li {
+    opacity: 0;
+    transform: translateY(-15px);
+    animation: fadeInFromTop 0.8s ease-in-out forwards;
+}
+
+.contact-findme-links li:nth-child(1) {
+    animation-delay: 1.2s;
+}
+.contact-findme-links li:nth-child(2) {
+    animation-delay: 1.3s;
+}
+.contact-findme-links li:nth-child(3) {
+    animation-delay: 1.4s;
+}
+.contact-findme-links li:nth-child(4) {
+    animation-delay: 1.5s;
+}
+.contact-findme-links li:nth-child(5) {
+    animation-delay: 1.6s;
+}
+
+.contact-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Fade in dari atas dengan delay */
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInFromTop 1.2s ease-in-out forwards;
+    animation-delay: 1.8s;
+}
+
+.contact-affiliation{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Fade in dari atas */
+    opacity: 0;
+    transform: translateY(-25px);
+    animation: fadeInFromTop 1s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+.oxure span.indent{
+    padding-left: 6em; /* Sesuaikan ukuran tab */
+    display: inline-block; /* Penting untuk span */
+}
+
+.nskg span.indent{
+    padding-left: 6em; /* Sesuaikan ukuran tab */
+    display: inline-block; /* Penting untuk span */
+}
+
+.contact-email-phone{
+    display: flex;
+    gap: 180px; /* Jarak antar kolom */
+    align-items: center; /* Center semua content */
+    transform: translate(-530px, -70px);/* Pindahkan ke kiri */
+    /* Fade in dari atas dengan mempertahankan posisi */
+    opacity: 0;
+    animation: fadeInEmailPhone 1s ease-in-out forwards;
+    animation-delay: 2.2s;
+}
+
+.contact-email, .contact-phone{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* Fade in dari atas untuk setiap kolom */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInFromTop 0.8s ease-in-out forwards;
+}
+
+.contact-email {
+    animation-delay: 2.4s;
+}
+
+.contact-phone {
+    animation-delay: 2.6s;
+}
+
+.contact-cred{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: flex-start;
+    transform: translateX(-438px);
+    /* Fade in dari atas dengan mempertahankan posisi X */
+    opacity: 0;
+    animation: fadeInCred 1s ease-in-out forwards;
+    animation-delay: 2.8s;
+}
+
+/* Keyframe animations */
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInFindme {
+    from {
+        opacity: 0;
+        transform: translateX(-438px) translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-438px) translateY(0);
+    }
+}
+
+@keyframes fadeInEmailPhone {
+    from {
+        opacity: 0;
+        transform: translate(-530px, -100px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-530px, -70px);
+    }
+}
+
+@keyframes fadeInCred {
+    from {
+        opacity: 0;
+        transform: translateX(-438px) translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-438px) translateY(0);
+    }
+}
+
+/* Hover effects untuk interaktivitas */
+.contact-findme-links li:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.contact-logo:hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
+}
+
+/* Untuk animasi yang responsif dan smooth */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
